@@ -1,4 +1,4 @@
-baseURL = "lddurbin.netlify.app"
+baseURL = "https://lddurbin.netlify.app"
 theme = "hugo-apero"
 languageCode = "en"
 title = "Lee Durbin"
