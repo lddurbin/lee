@@ -7,7 +7,7 @@ date: "2021-09-11"
 draft: false
 excerpt: This is my first R package, which makes it easy to download and work with data on new records added to the British National Bibliography.
 layout: single
-subtitle: A light-weight R package for downloading and working with data on new records added to the British National Bibliography
+subtitle: A lightweight R package for downloading and working with data on new records added to the British National Bibliography
 tags:
 - hugo-site
 title: tidybnb
@@ -29,9 +29,9 @@ There was a bit of a fuss about it on Twitter, and the magazine's editor [wrote 
 
 ### A Thousand Choices
 
-Looking at my analysis, you might raise a reasonable point: what if the lack of female-authored history books reviewed in *History Today*'s 2016 issues due to the fact that not a lot of history books by women were published in that year?
+Looking at my analysis, you might raise a reasonable point: what if the lack of female-authored history books reviewed in *History Today*'s 2016 issues was due to the fact that not a lot of history books by women were published in that year?
 
-The obvious place that could help me to answer this question is the British Library, so I duly contacted them to ask for data on history books published in 2015 (the last full year of data they had), and the gender of the author(s). But it turned out they don't record the author's gender, so instead I scanned through the titles, did a bit of light Googling, and published [a follow-up blog post](https://treigladau.wordpress.com/2017/01/25/a-thousand-choices/) where I highlighted a bunch of history books written by women.
+The obvious place that could help me to answer this question is the British Library, so I duly contacted them to ask for data on history books published in 2015 (the last full year of data they had), and the gender of the author(s) for each title. But it turned out they don't record the author's gender, so instead I scanned through the titles, did a bit of light Googling, and published [a follow-up blog post](https://treigladau.wordpress.com/2017/01/25/a-thousand-choices/) where I highlighted a bunch of history books written by women.
 
 My plan was to use some sort of resource to approximate the gender of the names in the list of authors, but for various reasons it never worked out (and we can argue about the merits of such an exercise ad nauseam). With other things to focus on, I left this project behind and moved on with my life.
 
@@ -40,8 +40,10 @@ Things changed in 2020, when I learned how to code in R. As I became acquainted 
 
 To achieve this, I wrote a bunch of scripts that scrape the [New British National Bibliography records page](https://www.bl.uk/collection-metadata/new-bnb-records) on the British Library's website, download the RDF files listed there, filter the data to get the forthcoming history titles, and supplement them with data from Google Books. Using this data (including a synopsis of the book and its cover image), I form a tweet that gets posted to [@ukhistorybooks](https://twitter.com/ukhistorybooks) every 30 minutes.
 
-I was pleased with the result, but it requires a lot of work to pull off. There's a rich dataset underneath it all, and I wanted to make easier for others to access and explore - hence the tidybnb package.
+I was pleased with the result, but it required a lot of work to pull off. There's a rich dataset underneath it all, and I wanted to make easier for others to access and explore - hence the tidybnb package.
 
 ### tidybnb
 
+I'm still working on this (including the README file), but for now it does a simple thing: it downloads RDF files containing data on the latest records added to the British National Bibliography.
 
+You can either download all of the RDFs listed on the web page, or specific ones based on a date that you can pass to `download_rdf()`. I'm now working on a `query_rdf()` function that loads the RDF files into [Virtuoso](https://github.com/ropensci/virtuoso), and returns the data as a dataframe for easy querying. A lot of this functionality underpins the preparatory work that's needed for what gets posted to @ukhistorybooks, and now in this package it's (almost) available for others to use via a few simple function calls.
