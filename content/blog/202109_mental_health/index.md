@@ -10,7 +10,7 @@ subtitle: Is it any harder suffering from anxiety and depression as a data analy
 title: What it's like suffering from anxiety and depression as a data analyst
 ---
 
-![The San Juan Mountains are beautiful!](featured.jpg "'anxiety' by FlickrJunkie is licensed under CC BY-NC-SA 2.0")
+![The thought spiral](featured.jpg "'anxiety' by FlickrJunkie is licensed under CC BY-NC-SA 2.0")
 *'anxiety' by FlickrJunkie is licensed with CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/*
 
 Imposter Syndrome. Perfectionism. Constantly trying to keep up with the latest trends. A sense of responsibility and a desire to set a good example.
